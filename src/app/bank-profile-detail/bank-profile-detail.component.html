@@ -1,0 +1,11 @@
+<div class="profile-detail" *ngIf="profile">
+    <h2>{{profile.name | uppercase}} Details</h2>
+    <div>id: {{profile.id}}</div>
+    <div>
+      <!-- <mat-divider></mat-divider> -->
+      <p id="profile-name">Profile name: {{profile.name}}</p>
+      <p>ID: {{profile.id}}</p>
+      <!-- <mat-divider></mat-divider> -->
+      <p>Email: {{profile.email}}</p>
+    </div>
+  </div>
