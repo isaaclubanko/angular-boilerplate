@@ -1,0 +1,35 @@
+
+<div class = "container-sm form-group ">
+  <div class="row">
+    <div class ="col-4">
+      <label for="currency">Currency: </label>
+      <input id="currency" type="text" [formControl]="currency">
+    </div>
+    <div class="col-4">
+      <button type="button" class="btn btn-primary" (click)="sendCurrencyUpdate()">Get Accounts</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-sm">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Profile ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Currency</th>
+        <th scope="col">Account Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of accounts">
+        <th scope="row">{{ account.id }}</th>
+        <td>{{ account.accountHolderName}} </td>
+        <td>{{ account.currency }}</td>
+        <td>{{ account.details.accountType }}</td>
+      </tr>
+      
+    </tbody>
+
+  </table>
+</div>
