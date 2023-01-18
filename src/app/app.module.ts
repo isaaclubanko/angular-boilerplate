@@ -15,6 +15,7 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { AccountRequirementsComponent } from './account-requirements/account-requirements.component';
 import { DynamicFormBuilderComponent } from './dynamic-form-builder/dynamic-form-builder.component';
+import { FieldBuilderComponent } from './dynamic-form-builder/field-builder/field-builder.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DynamicFormBuilderComponent } from './dynamic-form-builder/dynamic-form
     QuotesComponent,
     AccountRequirementsComponent,
     DynamicFormBuilderComponent,
+    FieldBuilderComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+interface dynamicFormObject {
+  fields: any[]
+  title: string
+  type: string
+}
 
 @Component({
   selector: 'app-dynamic-form-builder',
@@ -6,5 +13,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./dynamic-form-builder.component.css']
 })
 export class DynamicFormBuilderComponent {
-
+  @Input() fields: any[] = [];
+  // @Input() chosenNumber?: number;
+  constructor() { }
+  
 }

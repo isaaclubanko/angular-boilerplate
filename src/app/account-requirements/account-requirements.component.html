@@ -7,3 +7,5 @@
     <option>--</option>
     <option *ngFor="let form of formData" value="{{form.title}}" [class.selected]="form === selectBoxOption" >{{ form.title }}</option>
 </select>
+
+<app-dynamic-form-builder [fields]="selectedForm.fields"></app-dynamic-form-builder>

@@ -1,6 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { WiseService } from '../wise.service';
 
+interface dynamicFormObject {
+  fields: any[]
+  title: string
+  type: string
+}
+
 @Component({
   selector: 'app-account-requirements',
   templateUrl: './account-requirements.component.html',
@@ -13,7 +19,11 @@ export class AccountRequirementsComponent {
 
   @Input() quoteID?: string;
   formData: any[] = [];
-  selectedForm: any = {}
+  selectedForm: dynamicFormObject = {
+    fields: [],
+    title: '',
+    type: ''
+  }
   selectBoxOption: string = ''
 
   getAccountRequirements(): void {
@@ -24,14 +34,13 @@ export class AccountRequirementsComponent {
   }
 
   updateFormOption(): void {
-    // this.selectedForm = form;
+    // In the future, use a map or a more elegant way of selecting this data
     if(this.selectBoxOption !== '--' && this.selectBoxOption){
       for (let i = 0; i < this.formData.length; i++){
         if(this.formData[i].title === this.selectBoxOption){
           this.selectedForm = this.formData[i]
         }
       }
-      console.log(this.selectedForm)
     }
   }
 
@@ -40,3 +49,4 @@ export class AccountRequirementsComponent {
   }
 
 }
+
