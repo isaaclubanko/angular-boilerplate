@@ -18,19 +18,19 @@ export class AccountRequirementsComponent {
   constructor(
     private wiseService: WiseService
   ){}
-  form: FormGroup =  new FormGroup({});
-  @Input() quoteID?: string;
+  // this is just a placeholder for the API data returned, not an actual form. Poorly named variable
   formData: any[] = [];
+  //used as a key to fill out SelectedForm (bad practice)
+  selectBoxOption: string = ''
+  // same as above, a dummy object to keep track of a single option selected from API data
   selectedForm: dynamicFormObject = {
     fields: [],
     title: '',
     type: ''
   }
-  
-  
-  // TODO: Create a FormGroup Object, pass it down the dynamic form and field-builder objects and bind the inputs to the values, then the value can 
-  // used to make API calls? 
-  selectBoxOption: string = ''
+  // actual form which we build to keep track of user input
+  appForm: FormGroup =  new FormGroup({});
+  @Input() quoteID?: string;
 
   getAccountRequirements(): void {
     this.wiseService.getAccountRequirements(this.quoteID).subscribe(data => {
@@ -41,12 +41,14 @@ export class AccountRequirementsComponent {
 
   updateFormOption(): void {
     // In the future, use a map or a more elegant way of selecting this data
+    // selects a form and fills out empty form data for each field
+    // should be broken into two methods, one to select the form, the other to build out the actual form
     if(this.selectBoxOption !== '--' && this.selectBoxOption){
       for (let i = 0; i < this.formData.length; i++){
         if(this.formData[i].title === this.selectBoxOption){
           this.selectedForm = this.formData[i]
           this.selectedForm.fields.forEach(f=>{
-            this.form.addControl(f.name,
+            this.appForm.addControl(f.name,
               new FormControl('')
             )}
           )}
@@ -57,7 +59,7 @@ export class AccountRequirementsComponent {
   
 
   printSelectedForm(): void{
-    console.log(this.form)
+    console.log(this.appForm)
   }
 
 }

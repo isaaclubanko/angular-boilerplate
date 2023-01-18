@@ -13,8 +13,9 @@ interface dynamicFormObject {
   styleUrls: ['./dynamic-form-builder.component.css']
 })
 export class DynamicFormBuilderComponent {
+  // guess you have to fill these out withvalues?
+  @Input() appForm: FormGroup = new FormGroup({});
   @Input() fields: any[] = [];
-  // @Input() chosenNumber?: number;
   constructor() { }
   
 }
