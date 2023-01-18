@@ -1,3 +1,9 @@
 <p>account-requirements works!</p>
 <h2>Quote ID: {{ quoteID }}</h2>
 <button class="btn btn-primary" (click)="getAccountRequirements()" [disabled]="!quoteID">Get Requirements</button>
+
+<select class="form-select" aria-label="Default select example" [(ngModel)]="selectBoxOption" (ngModelChange)="updateFormOption()">
+    <!--Terrible hack, but ngModelChange only triggers when the menu is changed-->
+    <option>--</option>
+    <option *ngFor="let form of formData" value="{{form.title}}" [class.selected]="form === selectBoxOption" >{{ form.title }}</option>
+</select>

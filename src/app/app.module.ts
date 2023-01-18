@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AccountsComponent } from './accounts/accounts.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { AccountRequirementsComponent } from './account-requirements/account-requirements.component';
+import { DynamicFormBuilderComponent } from './dynamic-form-builder/dynamic-form-builder.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AccountRequirementsComponent } from './account-requirements/account-req
     AccountsComponent,
     QuotesComponent,
     AccountRequirementsComponent,
+    DynamicFormBuilderComponent,
   ],
   imports: [
     BrowserModule,
