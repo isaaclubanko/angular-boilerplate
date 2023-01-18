@@ -2,7 +2,7 @@
     <div *ngFor="let field of fields">
         <div class="form-group row">
             <label class="form-control-label mt-2" [attr.for]="field.label">
-              {{field.name}}
+                {{field.name}}
             </label>
             <div class="mt-2" [ngSwitch]="field.group[0].type">
                 <div *ngSwitchCase="'text'">
@@ -15,14 +15,14 @@
                     </select>
                 </div>
                 <div *ngSwitchCase="'checkbox'" >
-  
+
                 </div>
                 <div *ngSwitchCase="'radio'">
-  
+
                 </div>
-              <!-- <div class="alert alert-danger my-1 p-2 fadeInDown animated" *ngIf="!isValid && isDirty">{{field.label}} is required</div> -->
+                <!-- <div class="alert alert-danger my-1 p-2 fadeInDown animated" *ngIf="!isValid && isDirty">{{field.label}} is required</div> -->
             </div>
-          </div>
+            </div>
     </div>
     <br/>
     <br/> 

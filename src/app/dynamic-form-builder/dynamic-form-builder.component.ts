@@ -14,7 +14,7 @@ interface dynamicFormObject {
 })
 export class DynamicFormBuilderComponent {
   // guess you have to fill these out withvalues?
-  @Input() appForm: FormGroup = new FormGroup({});
+  @Input() form: FormGroup = new FormGroup({});
   @Input() fields: any[] = [];
   constructor() { }
   

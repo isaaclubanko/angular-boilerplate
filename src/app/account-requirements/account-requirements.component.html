@@ -5,7 +5,7 @@
 <select class="form-select" aria-label="Default select example" [(ngModel)]="selectBoxOption" (ngModelChange)="updateFormOption()">
     <!--Terrible hack, but ngModelChange only triggers when the menu is changed-->
     <option>--</option>
-    <option *ngFor="let form of formData" value="{{form.title}}" [class.selected]="form === selectBoxOption" >{{ form.title }}</option>
+    <option *ngFor="let data of apiData" value="{{data.title}}" [class.selected]="data === selectBoxOption" >{{ data.title }}</option>
 </select>
 
-<app-dynamic-form-builder [appForm]="appForm" [fields]="selectedForm.fields"></app-dynamic-form-builder>
+<app-dynamic-form-builder [form]="form" [fields]="selectedForm.fields"></app-dynamic-form-builder>
