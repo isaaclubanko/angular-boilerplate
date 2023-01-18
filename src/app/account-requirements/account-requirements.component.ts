@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { WiseService } from '../wise.service';
+import { FormGroup, FormControl,Validators, FormBuilder } from '@angular/forms';
+
 
 interface dynamicFormObject {
   fields: any[]
@@ -16,7 +18,7 @@ export class AccountRequirementsComponent {
   constructor(
     private wiseService: WiseService
   ){}
-
+  form: FormGroup =  new FormGroup({});
   @Input() quoteID?: string;
   formData: any[] = [];
   selectedForm: dynamicFormObject = {
@@ -24,6 +26,10 @@ export class AccountRequirementsComponent {
     title: '',
     type: ''
   }
+  
+  
+  // TODO: Create a FormGroup Object, pass it down the dynamic form and field-builder objects and bind the inputs to the values, then the value can 
+  // used to make API calls? 
   selectBoxOption: string = ''
 
   getAccountRequirements(): void {
@@ -39,13 +45,19 @@ export class AccountRequirementsComponent {
       for (let i = 0; i < this.formData.length; i++){
         if(this.formData[i].title === this.selectBoxOption){
           this.selectedForm = this.formData[i]
+          this.selectedForm.fields.forEach(f=>{
+            this.form.addControl(f.name,
+              new FormControl('')
+            )}
+          )}
         }
       }
+      this.printSelectedForm()
     }
-  }
+  
 
   printSelectedForm(): void{
-    console.log(this.selectedForm)
+    console.log(this.form)
   }
 
 }
