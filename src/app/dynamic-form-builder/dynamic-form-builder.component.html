@@ -6,12 +6,12 @@
             </label>
             <div class="mt-2" [ngSwitch]="field.group[0].type">
                 <div *ngSwitchCase="'text'">
-                    <input  class="form-control" id="textBox" type="text" required>
+                    <input  class="form-control" id="textBox" type="text" required [name]="field.name" [formControl]="form.get(field.name)">
                 </div>
                 <div *ngSwitchCase="'select'">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" [formControl]="form.get(field.name)" >
                         <option>--</option>
-                        <option *ngFor="let value of field.group[0].valuesAllowed">{{ value.name }}</option>
+                        <option *ngFor="let value of field.group[0].valuesAllowed"  [value]="value.name">{{ value.name }}</option>
                     </select>
                 </div>
                 <div *ngSwitchCase="'checkbox'" >
