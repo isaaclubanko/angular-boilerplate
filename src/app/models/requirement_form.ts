@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Adapter} from './utils/adapter';
+import { Adapter} from '../utils/adapter';
 
 
 // Probably want to use adapter patern for this at one point

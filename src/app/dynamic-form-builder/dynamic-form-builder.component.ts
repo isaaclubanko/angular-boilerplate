@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AccountRequirementFormField } from '../requirement_form';
+import { AccountRequirementFormField } from '../models/requirement_form';
 
 interface dynamicFormObject {
   fields: AccountRequirementFormField[]

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Profile } from './profile';
+import { Profile } from './models/profile';
 import { Observable, of } from 'rxjs';
 import { map } from "rxjs/operators";
 
 import accountData from './bank-profiles/dummy_data.json';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { ProfileAdapter } from './profile';
+import { ProfileAdapter } from './models/profile';
 import { CredentialsService } from './credentials.service';
 
 @Injectable({
