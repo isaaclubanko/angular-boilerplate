@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Profile } from '../profile';
-import { ProfileService } from '../profile.service';
+import { Profile } from '../models/profile';
+import { WiseService } from '../wise.service';
 
 @Component({
   selector: 'app-bank-profiles',
@@ -12,7 +12,7 @@ export class BankProfilesComponent implements OnInit {
   profiles: Profile[] = [];
   selectedProfile!: Profile;
   constructor(
-    private profileService: ProfileService
+    private wiseService: WiseService
   ) { }
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class BankProfilesComponent implements OnInit {
   }
 
   getProfiles(): void {
-    this.profileService.getallProfiles()
+    this.wiseService.getallProfiles()
       .subscribe(profiles => this.profiles = profiles)
   }
   onSelect(profile: Profile): void {

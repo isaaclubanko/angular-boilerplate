@@ -1,11 +1,12 @@
+<div class="container-sm form-group">
 <h2>Bank Accounts</h2>
-<ul class="profiles">
-  <li *ngFor="let profile of profiles">
-    <button [class.selected]="profile === selectedProfile" type="button" (click)="onSelect(profile)">
-      <span class="badge">{{profile.id}}: </span>
-      <span class="name">{{profile.name}}</span>
-    </button>
-    <!-- <mat-divider></mat-divider> -->
-  </li>
-</ul>
-<app-bank-profile-detail [profile]="selectedProfile"></app-bank-profile-detail>
+  <ul class="profiles">
+    <li *ngFor="let profile of profiles">
+      <button [class.selected]="profile === selectedProfile" type="button" (click)="onSelect(profile)">
+        <span class="badge">{{profile.id}}: </span>
+        <span class="name">{{profile.name}}</span>
+      </button>
+    </li>
+  </ul>
+  <app-bank-profile-detail [profile]="selectedProfile"></app-bank-profile-detail>
+</div>

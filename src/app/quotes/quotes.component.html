@@ -1,0 +1,28 @@
+
+<div class="container-sm">
+  <div class="row-md">
+    <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="source-currency">Source Currency: </label>
+        <input class="form-control" id="source-currency" type="text" formControlName="sourceCurrency" required>
+    
+        <label for="destination-currency">Destination Currency: </label>
+        <input class="form-control" id="destination-currency" type="text" formControlName="destinationCurrency" required>
+    
+    
+        <label for="amount">Amount: </label>
+        <input class="form-control" id="amount" type="text" formControlName="amount" required>
+    
+        <label for="profileID">Profile ID: </label>
+        <input  class="form-control"id="profileID" type="text" formControlName="profileID" required>
+        
+        <button class="btn btn-primary"  type="submit" [disabled]="!quoteForm.valid">Get Quote</button>  
+      </div>
+    </form>
+    <h2>Quote Expiration: {{ expiration }}</h2>
+    <app-account-requirements [quoteID]="quoteID"></app-account-requirements>
+
+  </div>
+</div>
+
+<!-- <app-bank-profile-detail [profile]="selectedProfile"></app-bank-profile-detail> -->

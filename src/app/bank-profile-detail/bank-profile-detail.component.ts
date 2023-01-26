@@ -1,4 +1,4 @@
-import { Profile } from '../profile';
+import { Profile } from '../models/profile';
 
 import { Component, OnInit, Input } from '@angular/core';
 
