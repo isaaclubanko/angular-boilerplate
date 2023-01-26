@@ -1,8 +1,9 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormField } from '../requirement_form';
 
 interface dynamicFormObject {
-  fields: any[]
+  fields: FormField[]
   title: string
   type: string
 }
@@ -15,7 +16,17 @@ interface dynamicFormObject {
 export class DynamicFormBuilderComponent {
   // guess you have to fill these out withvalues?
   @Input() form: any;
-  @Input() fields: any[] = [];
+  @Input() fields: FormField[] = [
+    new FormField(
+      '',
+      [{
+          key: "" ,
+          name: "", 
+          type: "", 
+          refreshRequirementsOnChange: false,
+      }]
+    )
+  ];
   constructor() { }
   
 }

@@ -18,7 +18,7 @@ export class AccountRequirementsComponent {
   constructor(
     private wiseService: WiseService
   ){}
-  // this is just a placeholder for the API data returned, not an actual form. 
+  // this is just a placeholder for the API data returned, not an actual form. Most of this logic should be moved into the service
   apiData: any[] = [];
   //used as a key to fill out SelectedForm (bad practice)
   selectBoxOption: string = ''
