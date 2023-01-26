@@ -1,4 +1,4 @@
-<form class="form" >
+<div class="form" [formGroup] = "form">
     <div *ngFor="let field of fields">
         <div class="form-group row">
             <label class="form-control-label mt-2" [attr.for]="field.name">
@@ -6,10 +6,10 @@
             </label>
             <div class="mt-2" [ngSwitch]="field.group[0].type">
                 <div *ngSwitchCase="'text'">
-                    <input  class="form-control" id="textBox" type="text" required [name]="field.name" [formControl]="form.get(field.name)">
+                    <input  class="form-control" id="textBox" type="text" required [name]="field.name" [formControlName]="field.name">
                 </div>
                 <div *ngSwitchCase="'select'">
-                    <select class="form-select" aria-label="Default select example" [formControl]="form.get(field.name)" >
+                    <select class="form-select" aria-label="Default select example" [formControlName]="field.name"> >
                         <option>--</option>
                         <option *ngFor="let value of field.group[0].valuesAllowed"  [value]="value.name">{{ value.name }}</option>
                     </select>
@@ -20,10 +20,9 @@
                 <div *ngSwitchCase="'radio'">
 
                 </div>
-                <!-- <div class="alert alert-danger my-1 p-2 fadeInDown animated" *ngIf="!isValid && isDirty">{{field.label}} is required</div> -->
             </div>
             </div>
     </div>
     <br/>
     <br/> 
-</form>
+</div>

@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { Adapter} from './utils/adapter';
 
-export class FormField {
+
+// Probably want to use adapter patern for this at one point
+export class AccountRequirementFormField {
     constructor(
         public name: string,
         public group: {
@@ -22,11 +24,11 @@ export class FormField {
 
 }
 
-export class RequirementGroup {
+export class AccountRequirementGroup {
     constructor(
         public type: string,
         public title: string,
-        public fields: FormField[],
+        public fields: AccountRequirementFormField[],
         public usageInfo?: string
 
     ){}

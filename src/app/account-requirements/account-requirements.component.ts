@@ -59,7 +59,7 @@ export class AccountRequirementsComponent {
   
 
   printSelectedForm(): void{
-    console.log(this.form)
+    console.log(this.form.value)
   }
 
 }
